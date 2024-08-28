@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins';
+    background: #2f2f2f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* El cuerpo ocupa todo el alto de la ventana */
+    overflow: hidden;
+}
+
+/* Diseño 1: Introducción */
+#intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.intro-text {
+    margin-left: 1svw;
+}
+
+/* Tamaño de la imagen en el diseño 1 */
+.intro-content img {
+    width: 10vw; /* Cambia este valor según lo que necesites */
+    height: auto; /* Mantener proporción */
+}
+
+@media (max-width: 667px) {
+    .intro-content img {
+        width: 100px; /* Tamaño más pequeño en pantallas pequeñas */
+    }
+}
+
+.tagline {
+    color: #FF7121;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 2.5vw;
+}
+
+.cta {
+    color: #FF7121;
+    font-size: 1.2vw;
+}
+
+/* Diseño 2: Enlaces a redes sociales */
+#main-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column; /* Colocar en columna por defecto */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+/* Estilo por defecto: Pantallas anchas (horizontal) */
+.name {
+    font-size: 8vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    gap: 10px; /* Espacio entre las palabras */
+}
+
+/* Estilo para pantallas verticales (teléfonos móviles, tablets en modo retrato) */
+@media only screen and (max-width: 667px) and (orientation: portrait) {
+    .name {
+        flex-direction: column;
+        text-align: center; /* Centra el texto en vertical */
+        gap: 0; /* Elimina el espacio entre las palabras */
+    }
+}
+
+.links-title {
+    color: #FF7121;
+    margin: 40px 0;
+    font-size: 2rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Botones en el diseño 2 */
+.button {
+    background-color: #FF7121;
+    color: #ffffff;
+    padding: 15px 445px; /* Cambia estos valores para ajustar el tamaño */
+    text-align: center;
+    font-size: 2vw;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff7f50;
+}
+
+.social-icons {
+    margin-top: 40px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons a i {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.social-icons a i:hover {
+    color: #ffffff;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    /* Cambios para pantallas pequeñas como móviles y tablets pequeñas */
+    .links-title {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+        padding: 8px 70px;
+    }
+
+    /* Para ajustar el título 'Sergio Hernández' en líneas separadas */
+    .name {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .name h1 {
+        display: block;
+    }
+}
+
+/* Cambios para pantallas grandes como ordenadores y tablets grandes */
+@media only screen and (min-width: 769px) {
+    .name {
+        font-size: 4rem;
+    }
+
+    .button {
+        font-size: 1.5rem;
+        padding: 15px 200px;
+    }
+}
+
+/* Animaciones */
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Ocultar inicialmente el main content */
+.hidden {
+    display: none;
+}
+
