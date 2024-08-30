@@ -19,4 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
             mainContent.style.opacity = "1";
         }, 1000); // Tiempo de duración de la animación de desvanecimiento
     }, 2000); // Tiempo que se mantiene el diseño 1 antes de comenzar la animación
+
+
+        // derecho del ratón
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    
+        // Bloquear teclas
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
 });
